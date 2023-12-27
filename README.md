@@ -4,6 +4,15 @@ Repository to hold Security Intents in standard template format.
 
 ![](res/nimbus.png)
 
+## Security Intents
+
+The security intents listed out here are the basis on which threat mitigation is implemented.
+
+- [Protect Asset](intents/core/protectAsset.yaml)
+- [Protect Port](intents/core/protectPort.yaml)
+- [Block Asset](intents/core/blockAsset.yaml)
+- [Block Raw Sockets](intents/core/blockRawSockets.yaml)
+
 ## Security Intent Template
 
 | Threat Scenario | (Scenario title) |
