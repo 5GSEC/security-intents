@@ -18,3 +18,5 @@ Repository to hold Security Intents in standard template format.
 |    **Security Intent Binding**    | (Set of labels, annotations describing workloads who would be impacted by this threat) |
 | **Pre-Deployment considerations** | (Anything that can be done in CI/CD pipelines that can alleviate this threat)          |
 |          **References**           |                                                                                        |
+
+

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 INTENTS_DIR=res/intents
+INTENTS_DIR_SHIV=intents
 HDR_MD=$(dirname $0)/header.md
 FTR_MD=$(dirname $0)/footer.md
 MD="README.md"
@@ -50,8 +51,8 @@ addCommonEntries() {
 EOF
 }
 
-forEveryIntent() {
-  [[ "$1" == "" ]] && statusLine ERR "invalid use of forEveryIntent"
+forEveryThreat() {
+  [[ "$1" == "" ]] && statusLine ERR "invalid use of forEveryThreat"
   if [[ -d $INTENTS_DIR ]]; then
     while read dir; do
       . $dir/intent
@@ -60,18 +61,39 @@ forEveryIntent() {
   fi
 }
 
+writeIntents() {
+  cat >>$MD <<EOF
+## Security Intents
+EOF
+  if [[ -d $INTENTS_DIR_SHIV ]]; then
+    for i in $(find $INTENTS_DIR_SHIV -name '*.yaml');
+    do
+      file=${i##*/}
+      j=${file%.*}
+      cat >>${MD} <<EOF
+  - [$j]($i)
+EOF
+    done;
+  fi
+}
+
 main() {
   cat >$MD <<EOF
 <!-- THIS IS AN AUTO-GENERATED FILE by $0. DO NOT EDIT MANUALLY -->
 
 $(cat $HDR_MD)
-
-## Security Intents
+EOF
+  echo "" >> $MD
+  writeIntents
+  echo "" >> $MD
+  cat >>$MD <<EOF
+## Security Threats
 | Title | Description | Severity | O-RAN Threat ID | Detection Methods | Mitigation Methods | Security Intent | Security Intent Binding | Pre-Deployment considerations | References |
 |:-----:|-------------|----------|-----------------|-------------------|--------------------|-----------------|-------------------------|-------------------------------|------------|
 EOF
+  echo "" >> $MD
   copyContents
-  forEveryIntent addCommonEntries
+  forEveryThreat addCommonEntries
   cat >>"$MD" <<EOF
 
 $(cat $FTR_MD)
