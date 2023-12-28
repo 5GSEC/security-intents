@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-INTENTS_DIR=res/intents
-INTENTS_DIR_SHIV=intents
+INTENTS_DIR=intents
+THREATS_DIR=threats
 HDR_MD=$(dirname $0)/header.md
 FTR_MD=$(dirname $0)/footer.md
 MD="README.md"
@@ -36,37 +36,39 @@ cleanup() {
   fi
 }
 
-copyContents() {
-  [[ -f intent ]] && {
-    . intent
-    mkdir -p $INTENTS_DIR/$TITLE
-    cp intent $SI_FILE $SIB_FILE $INTENTS_DIR/$TITLE
-  }
-}
-
-addCommonEntries() {
-  CUR_INTENT_DIR=$INTENTS_DIR/$TITLE
-  cat >>${MD} <<EOF
-  | [$TITLE]($CUR_INTENT_DIR) | $DESCRIPTION | $SEVERITY | $THREAT_ID | $DETECTION_METHODS | $MITIGATION_METHODS | [file]($CUR_INTENT_DIR/$SI_FILE) | [file]($CUR_INTENT_DIR/$SIB_FILE) | $PRE_DEPLOYMENT_CONSIDERATIONS | $REFERENCES |
-EOF
-}
-
-forEveryThreat() {
-  [[ "$1" == "" ]] && statusLine ERR "invalid use of forEveryThreat"
-  if [[ -d $INTENTS_DIR ]]; then
-    while read dir; do
-      . $dir/intent
-      $1
-    done < <(find $INTENTS_DIR -mindepth 1 -maxdepth 1 -type d | sort)
-  fi
-}
-
 writeIntents() {
   cat >>$MD <<EOF
 ## Security Intents
 EOF
-  if [[ -d $INTENTS_DIR_SHIV ]]; then
-    for i in $(find $INTENTS_DIR_SHIV -name '*.yaml');
+  if [[ -d $INTENTS_DIR ]]; then
+    for i in $(find $INTENTS_DIR -name '*.yaml');
+    do
+      file=${i##*/}
+      j=${file%.*}
+      cat >>${MD} <<EOF
+  - [$j]($i)
+EOF
+    done;
+  fi
+}
+
+writeThreatTemplatFile() {
+  cat >>$MD <<EOF
+## Security Threat Template
+EOF
+  if [[ -f $THREATS_DIR/threatTemplate.yaml ]]; then
+    echo '```' >>${MD}
+    cat $THREATS_DIR/threatTemplate.yaml >>${MD}
+    echo '```' >>${MD}
+  fi
+}
+
+generateIntentFilesForThreats() {
+  cat >>$MD <<EOF
+## Security Threats
+EOF
+  if [[ -d $THREATS_DIR ]]; then
+    for i in $(find $THREATS_DIR -name '*.yaml');
     do
       file=${i##*/}
       j=${file%.*}
@@ -86,14 +88,9 @@ EOF
   echo "" >> $MD
   writeIntents
   echo "" >> $MD
-  cat >>$MD <<EOF
-## Security Threats
-| Title | Description | Severity | O-RAN Threat ID | Detection Methods | Mitigation Methods | Security Intent | Security Intent Binding | Pre-Deployment considerations | References |
-|:-----:|-------------|----------|-----------------|-------------------|--------------------|-----------------|-------------------------|-------------------------------|------------|
-EOF
+  writeThreatTemplatFile
   echo "" >> $MD
-  copyContents
-  forEveryThreat addCommonEntries
+  generateIntentFilesForThreats
   cat >>"$MD" <<EOF
 
 $(cat $FTR_MD)
