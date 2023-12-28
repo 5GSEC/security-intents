@@ -18,20 +18,39 @@ Repository to hold Security Intents in standard template format.
 title:        # Scenario-title
 description:  # Detailed description of the scenario
 severity:     # High/Medium/Low
-oranThreadId: # mapping to Threat IDs defined in O-RAN WG11 Threat Model document
+tags: [oran, 5gcore, generic, oranThreatId]
 detectionMethods: #Mechanisms to detect the threat - https://fight.mitre.org/data%20sources
+   - name: applicationlog
+     tag: [mitre, ds0015]
+     description: desc
+     url: https://fight.mitre.org/data%20sources/DS0015
+   - name: myapplicationlog
+     tag: [accuknox, ax0015]
+     description: desc
+     url: https://...
 mitigationMethods: #Mechanisms to mitigate the threat - https://fight.mitre.org/mitigations
+   - name: applicationlog
+     tag: [mitre, ds0015]
+     description: desc
+     url: https://fight.mitre.org/data%20sources/DS0015
+   - name: myapplicationlog
+     tag: [accuknox, ax0015]
+     description: desc
+     url: https://...
 securityIntents:
-  - sample-si-1.yaml
-    - params         # We use this field to replace the values in template
-  - sample-si-2.yaml
-    - params
+  - sample-si-1   # no params for now
+  - sample-si-2
 securityIntentBinding: sample-si-binding.yaml
 preDeploymentConsiderations: #Anything that can be done in CI/CD pipelines that can alleviate this threat
-references: [ref1, ref2]
+references:
+  - name: ref1 
+    url:
+  - name: ref2
+    url: 
 ```
 
 ## Security Threats
+  - [threatPackageInstallation](threats/execution/threatPackageInstallation.yaml)
   - [threatTemplate](threats/threatTemplate.yaml)
 
 ## Contributions welcome...
