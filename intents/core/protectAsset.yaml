@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2023 Authors of Nimbus
+
+apiVersion: intent.security.nimbus.com/v1
+kind: SecurityIntent
+metadata:
+  name: [intent-name]
+  namespace: [intent-namespace]
+spec:
+  tags: core        # core, oran
+  ID: protectAsset
+  action:           # audit/block/allow/remediate...
+  mode:             # strict / best effort. In case mode is strict, 
+                    # atleast one adapter has to be strict
+  severity: 
+  params:
+    - path: /etc/shadow  # asset that is protected
+    - AllowBinary:       # which binaries are allowed to access the asset
+      - /free5gc/webConsole
+      - /free5gc/webApp
+    - ownerOnly: true    # bool to indicate if only owner can access the file

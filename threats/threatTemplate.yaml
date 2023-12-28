@@ -1,0 +1,14 @@
+title:        # Scenario-title
+description:  # Detailed description of the scenario
+severity:     # High/Medium/Low
+oranThreadId: # mapping to Threat IDs defined in O-RAN WG11 Threat Model document
+detectionMethods: #Mechanisms to detect the threat - https://fight.mitre.org/data%20sources
+mitigationMethods: #Mechanisms to mitigate the threat - https://fight.mitre.org/mitigations
+securityIntents:
+  - sample-si-1.yaml
+    - params         # We use this field to replace the values in template
+  - sample-si-2.yaml
+    - params
+securityIntentBinding: sample-si-binding.yaml
+preDeploymentConsiderations: #Anything that can be done in CI/CD pipelines that can alleviate this threat
+references: [ref1, ref2]

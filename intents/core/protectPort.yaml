@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2023 Authors of Nimbus
+
+apiVersion: intent.security.nimbus.com/v1
+kind: SecurityIntent
+metadata:
+  name: [intent-name]
+  namespace: [intent-namespace]
+spec:
+  tags: core                # core, oran
+  ID: protectPort           # will generate rules for all protocols
+  action:                   # audit/block/allow/remediate
+  mode:                     # strict / best effort
+  severity:
+  params:
+    - portRange:  8000-9000
+    - portList: [5000, 6000]
+    - AllowBinary:
+      - /free5gc/webconsole
+      - /free5gc/webapp
