@@ -9,9 +9,9 @@ Repository to hold Security Intents in standard template format.
 
 ## Security Intents
   - [blockAsset](intents/core/blockAsset.yaml)
-  - [protectPort](intents/core/protectPort.yaml)
   - [blockRawSocket](intents/core/blockRawSocket.yaml)
   - [protectAsset](intents/core/protectAsset.yaml)
+  - [protectPort](intents/core/protectPort.yaml)
 
 ## Security Threat Template
 ```
