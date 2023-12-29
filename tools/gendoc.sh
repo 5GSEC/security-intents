@@ -41,7 +41,7 @@ writeIntents() {
 ## Security Intents
 EOF
   if [[ -d $INTENTS_DIR ]]; then
-    for i in $(find $INTENTS_DIR -name '*.yaml');
+    for i in $(find $INTENTS_DIR -name '*.yaml' | sort);
     do
       file=${i##*/}
       j=${file%.*}
@@ -68,7 +68,7 @@ generateIntentFilesForThreats() {
 ## Security Threats
 EOF
   if [[ -d $THREATS_DIR ]]; then
-    for i in $(find $THREATS_DIR -name '*.yaml');
+    for i in $(find $THREATS_DIR -name '*.yaml' | sort);
     do
       file=${i##*/}
       j=${file%.*}
