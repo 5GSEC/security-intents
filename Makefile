@@ -1,2 +1,2 @@
 all:
-	@./tools/gendoc.sh
+	@./scripts/gendoc.sh

@@ -1,0 +1,40 @@
+title: Scenario-title
+description: Detailed description of the scenario
+severity: High/Medium/Low
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+  - name: Application log
+    tag:
+      - mitre/ds0015
+    description: Description # Optional
+    url: https://...
+  - name: Process
+    tag:
+      - accuknox/ax0015
+    description: Description # Optional
+    url: https://...
+mitigationMethods: # Mechanisms to mitigate the threat
+  - name: Update Software
+    tag:
+      - mitre/ds0015
+    description: desc
+    url: https://...
+  - name: User Account Management
+    tag:
+      - accuknox/ax0015
+    description: desc
+    url: https://...
+securityIntents:
+  - sample-si-1.yaml
+  - sample-si-2.yaml
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+  - sample-si-binding.yaml
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: ref1
+    url: https://...
+  - name: ref2
+    url: https://...
