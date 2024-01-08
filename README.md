@@ -56,6 +56,7 @@ references:
 
 | Title | Description | Severity | Security Intents | References |
 |:-----:|-------------|----------|------------|------------|
+   | [DNS Manipulation](threats/mitre/dnsManipulation.yaml) | An adversary can manipulate DNS requests to redirect network traffic and potentially reveal end user activity. | high | [accuknox/preventLocalDNSHijack](intents/accuknox/preventLocalDNSHijack), [mitre/integrityProtection](intents/mitre/integrityProtection), [mitre/networkTraffic](intents/mitre/networkTraffic) |[MITRE FiGHT](https://fight.mitre.org/techniques/FGT5006) |
 
 ## Contributions welcome...
 
