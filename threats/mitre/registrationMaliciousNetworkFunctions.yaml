@@ -1,0 +1,17 @@
+title: Regitration of Malicious Network Functions
+description: An adversary, such as an insider to the MNO or vendor, could install a malicious NF into the core network, in order to launch other attacks or get access to information.
+severity: high
+tags: [mitre, execution]
+detectionMethods: 
+mitigationMethods:
+   - name: networkSegmentation
+     tag: [mitre, m1030]
+     description: network segmentation
+     url: 
+securityActions:
+  - mitre/networkSegmentation
+securityIntentBinding: sample-si-binding.yaml
+preDeploymentConsiderations: #Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: MITRE FiGHT
+    url: https://fight.mitre.org/techniques/FGT5006

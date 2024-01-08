@@ -1,0 +1,20 @@
+title: Software Deployment Tools
+description: Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network.
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+mitigationMethods: # Mechanisms to mitigate the threat
+   - name: preventPkgInstall
+     tag: [accuknox, akx0002]
+     description: prevent package install
+     url: 
+securityActions:
+  - accuknox/preventPkgInstall
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT1072
+    url: https://fight.mitre.org/techniques/FGT1072
