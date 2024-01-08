@@ -16,7 +16,7 @@ mitigationMethods:
      tag: [accuknox, akx0001]
      description: prevent writes to the /etc/resolv.conf
      url: 
-securityIntents:
+securityActions:
   - mitre/networkTraffic
   - mitre/integrityProtection
   - accuknox/preventLocalDNSHijack

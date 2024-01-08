@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-INTENTS_DIR=intents
+ACTIONS_DIR=actions
 THREATS_DIR=threats
 HDR_MD=res/header.md
 FTR_MD=res/footer.md
@@ -46,20 +46,20 @@ extractRefs(){
   echo $REFERENCES
 }
 
-extractSis(){
+extractSAs(){
   if [[ "$1" == "" ]]; then
        printf "invalid use of extractRefs"
        exit 1
   fi
-  SIsPath=""
-  intents="$(yq e -o=j '.securityIntents' $1 | jq -r '.[]')"
-  for intent in $intents; do
-    intentPath=$(echo "[$intent]($INTENTS_DIR/$intent)")
-    SIsPath="$intentPath, $SIsPath"
+  SAsPath=""
+  actions="$(yq e -o=j '.securityActions' $1 | jq -r '.[]')"
+  for actions in $actions; do
+    actionPath=$(echo "[$action]($ACTIONS_DIR/$action)")
+    SAsPath="$actiotPath, $SAsPath"
   done
   # Remove trailing comma and space
-  SIsPath="${SIsPath%, }"
-  echo $SIsPath
+  SAsPath="${SAsPath%, }"
+  echo $SAsPath
 }
 
 setThreatEntries() {
@@ -68,12 +68,12 @@ setThreatEntries() {
     DESCRIPTION=$(yq '.description' $file)
     SEVERITY=$(yq '.severity' $file)
     REFERENCES=$(extractRefs $file)
-    SIS_PATH=$(extractSis $file)
+    SAS_PATH=$(extractSAs $file)
     if [[ $SEVERITY == "null" ]]; then
       SEVERITY=""
     fi
    cat >>${MD} <<EOF
-   | [$TITLE]($file) | $DESCRIPTION | $SEVERITY | $SIS_PATH |$REFERENCES |
+   | [$TITLE]($file) | $DESCRIPTION | $SEVERITY | $SAS_PATH |$REFERENCES |
 EOF
   done;
 }
@@ -101,7 +101,7 @@ EOF
 
 ## Security Threats
 
-| Title | Description | Severity | Security Intents | References |
+| Title | Description | Severity | Security Actions | References |
 |:-----:|-------------|----------|------------|------------|
 EOF
   forEveryThreat setThreatEntries
