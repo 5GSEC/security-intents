@@ -8,6 +8,10 @@ tags:
 detectionMethods: # Mechanisms to detect the threat
 mitigationMethods: # Mechanisms to mitigate the threat
 securityActions:
+   - name: nil
+     tag:
+     description: nil
+     url: 
 securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
 preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
 references:
