@@ -53,9 +53,9 @@ extractSAs(){
   fi
   SAsPath=""
   actions="$(yq e -o=j '.securityActions' $1 | jq -r '.[]')"
-  for actions in $actions; do
+  for action in $actions; do
     actionPath=$(echo "[$action]($ACTIONS_DIR/$action)")
-    SAsPath="$actiotPath, $SAsPath"
+    SAsPath="$actionPath, $SAsPath"
   done
   # Remove trailing comma and space
   SAsPath="${SAsPath%, }"
