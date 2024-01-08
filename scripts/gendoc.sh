@@ -52,7 +52,7 @@ extractSAs(){
        exit 1
   fi
   SAsPath=""
-  actions="$(yq e -o=j '.securityActions' $1 | jq -r '.[]')"
+  actions="$(yq e -o=j '.securityActions' $1 | jq -r '.[]?')"
   for action in $actions; do
     actionPath=$(echo "[$action]($ACTIONS_DIR/$action)")
     SAsPath="$actionPath, $SAsPath"
