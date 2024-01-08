@@ -1,0 +1,27 @@
+title: DNS Manipulation
+description: An adversary can manipulate DNS requests to redirect network traffic and potentially reveal end user activity.
+severity: high
+tags: [mitre, initial-access]
+detectionMethods: 
+   - name: networkTraffic
+     tag: [mitre, ds0029]
+     description: desc
+     url: https://fight.mitre.org/data%20sources/DS0029
+mitigationMethods:
+   - name: integrityProtection
+     tag: [mitre, fgm1557]
+     description: use strong data integrity protection algorithms
+     url: https://fight.mitre.org/mitigations/FGM1557
+   - name: preventLocalDNSHijack
+     tag: [accuknox, akx0001]
+     description: prevent writes to the /etc/resolv.conf
+     url: 
+securityIntents:
+  - mitre/networkTraffic
+  - mitre/integrityProtection
+  - accuknox/preventLocalDNSHijack
+securityIntentBinding: sample-si-binding.yaml
+preDeploymentConsiderations: #Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: MITRE FiGHT
+    url: https://fight.mitre.org/techniques/FGT5006
