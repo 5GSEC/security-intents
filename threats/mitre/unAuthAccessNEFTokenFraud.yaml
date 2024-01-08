@@ -1,0 +1,15 @@
+title: Unauthorized access to Network Exposure Function (NEF) via token fraud
+description: An adversary controlling an (external) Application Function (AF) presents a fraudulent OAuth access token to access Network Exposure Function (NEF) services
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+mitigationMethods: # Mechanisms to mitigate the threat
+securityActions:
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT5011
+    url: https://fight.mitre.org/techniques/FGT5011
