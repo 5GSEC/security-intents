@@ -39,9 +39,9 @@ mitigationMethods: # Mechanisms to mitigate the threat
       - accuknox/ax0015
     description: desc
     url: https://...
-securityIntents:
-  - sample-si-1.yaml
-  - sample-si-2.yaml
+securityActions:
+  - sample-sa-1.yaml
+  - sample-sa-2.yaml
 securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
   - sample-si-binding.yaml
 preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
@@ -54,9 +54,9 @@ references:
 
 ## Security Threats
 
-| Title | Description | Severity | Security Intents | References |
+| Title | Description | Severity | Security Actions | References |
 |:-----:|-------------|----------|------------|------------|
-   | [DNS Manipulation](threats/mitre/dnsManipulation.yaml) | An adversary can manipulate DNS requests to redirect network traffic and potentially reveal end user activity. | high | [accuknox/preventLocalDNSHijack](intents/accuknox/preventLocalDNSHijack), [mitre/integrityProtection](intents/mitre/integrityProtection), [mitre/networkTraffic](intents/mitre/networkTraffic) |[MITRE FiGHT](https://fight.mitre.org/techniques/FGT5006) |
+   | [DNS Manipulation](threats/mitre/dnsManipulation.yaml) | An adversary can manipulate DNS requests to redirect network traffic and potentially reveal end user activity. | high | , , |[MITRE FiGHT](https://fight.mitre.org/techniques/FGT5006) |
 
 ## Contributions welcome...
 
