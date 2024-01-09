@@ -140,7 +140,7 @@
 |.001 | Radio Intelligent Controller (RIC) | An adversary may compromise a Radio Intelligent Controller (RIC) to affect radio network configuration.| Yes |
 |.002 | xApp | An adversary may compromise an xApp to affect the radio network configuration.| Yes |
 |.003 | rApp | An adversary may compromise an rApp to affect the radio network configuration.| Yes |
-|FGT5034 | Rogue xApps unauthorized access	Malicious xApps may gain unauthorized access to near-RT RIC and E2 nodes.| Yes |
+|FGT5034 | Rogue xApps unauthorized access | Malicious xApps may gain unauthorized access to near-RT RIC and E2 nodes.| Yes |
 |FGT5035 | Radio Jamming | An adversary transmits radio signals to degrade reception and demodulation of signals to the UE or gNB/eNB.| Yes |
 |FGT5036 | AI/ML training data and prediction poisoning | Adversary may use AI/ML training data and prediction poisoning techniques to manipulate the outcomes of a machine learning model for malicious purposes, to disrupt service or change the behavior of network elements.| Yes |
 |FGT5037 | Alter ML Model | Adversary may gain unauthorized access to machine learning model or database and alters the data to disrupt service or change the behavior of network elements.| Yes |
