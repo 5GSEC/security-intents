@@ -3,15 +3,15 @@
 |:-----:|-------------|----------|------------|
 |FGT1014 | Rootkit | Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components| Yes |
 |FGT1018 | Remote System Discovery | Adversaries may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system.| Yes |
-|FGT1020 | Automated Exfiltration | Adversaries may exfiltrate data, such as sensitive documents, through the use of automated processing after being gathered during Collection.| Yes |
-|.001 | Traffic Duplication | Adversaries may leverage traffic mirroring in order to automate data exfiltration over compromised network infrastructure.| Yes |
+|FGT1020 | Automated Exfiltration | Adversaries may exfiltrate data, such as sensitive documents, through the use of automated processing after being gathered during Collection.| No |
+|.001 | Traffic Duplication | Adversaries may leverage traffic mirroring in order to automate data exfiltration over compromised network infrastructure.| No |
 |FGT1021 | Remote Services | Adversaries may use Valid Accounts to log into a service specifically designed to accept remote connections, such as telnet, SSH, and VNC.| Yes |
 |FGT1040 | Network Sniffing | Adversaries may sniff network traffic to capture information about an environment, including authentication material passed over the network.| Yes |
-|.501 | Radio interface | An adversary may eavesdrop on unencrypted sensitive subscriber data to capture information to and from a UE that has been bid down to a less secure format, such as Wi-Fi or an earlier mobile network generation.| Yes |
-|.502 | Fronthaul User Plane Data | Adversary manipulates User Plane data on Fronthaul interface between O-DU and O-RU to re-direct the data to a wrong destination or get discarded by the recipient due to incorrect message parameters.| Yes |
+|.501 | Radio interface | An adversary may eavesdrop on unencrypted sensitive subscriber data to capture information to and from a UE that has been bid down to a less secure format, such as Wi-Fi or an earlier mobile network generation.| No |
+|.502 | Fronthaul User Plane Data | Adversary manipulates User Plane data on Fronthaul interface between O-DU and O-RU to re-direct the data to a wrong destination or get discarded by the recipient due to incorrect message parameters.| No |
 |FGT1046 | Network Service Scanning | Adversaries may attempt to get a listing of services running on remote hosts, including those that may be vulnerable to remote software exploitation.| Yes |
-|FGT1048 | Exfiltration Over Alternative Protocol | Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel.| Yes |
-|.003 | Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol | Adversaries may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel.| Yes |
+|FGT1048 | Exfiltration Over Alternative Protocol | Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel.| No |
+|.003 | Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol | Adversaries may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel.| No |
 |FGT1072 | Software Deployment Tools | Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network.| Yes |
 |FGT1078 | Valid Accounts | Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.| Yes |
 |.003 | Local Accounts | Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.| Yes |
