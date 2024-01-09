@@ -93,49 +93,49 @@
 |.001 | Layer 2 Redirection of Encrypted DNS | An adversary using a RAN fake gNB and fake UE device can manipulate encrypted traffic to achieve plaintext manipulation of DNS requests sent by the victim UE to the network over the radio interface.| No |
 |.002 | DNS Encapsulation | An adversary can hide user traffic within DNS requests that are part of the data sessions and transmit data undetected.| No |
 |FGT5007 | Registration of malicious network functions | An adversary, such as an insider to the MNO or vendor, could install a malicious NF into the core network, in order to launch other attacks or get access to information.| Yes |
-|FGT5008 | Redirection of traffic via user plane network function | An adversary diverts user plane traffic for one or more UEs via a user plane function, to monitor user data.| Yes |
-|FGT5009 | Weaken Integrity | An adversary may compromise a network device’s integrity capability or configuration in order to exploit the non-integrity protected data communication| Yes |
+|FGT5008 | Redirection of traffic via user plane network function | An adversary diverts user plane traffic for one or more UEs via a user plane function, to monitor user data.| No |
+|FGT5009 | Weaken Integrity | An adversary may compromise a network device’s integrity capability or configuration in order to exploit the non-integrity protected data communication| No |
 |.001 | Radio Interface | An adversary may alter or spoof network signaling so as to enable the NULL integrity algorithm thus allowing for manipulation of user data or signaling over the radio interface, for example to redirect traffic.| Yes |
-|.002 | Network Interfaces | An adversary may change the configuration of network nodes so as to disable or weaken integrity protection on the network interfaces Non-SBI, SBI and Roaming, thus allowing for transmitted data manipulation.| Yes |
-|FGT5010 | Fraudulent AMF registration for UE in UDM | An adversary-controlled AMF registers itself in the UDM as serving a victim UE in order to pave the way for other attacks such as fraud or UE subscription data retrieval.| Yes |
+|.002 | Network Interfaces | An adversary may change the configuration of network nodes so as to disable or weaken integrity protection on the network interfaces Non-SBI, SBI and Roaming, thus allowing for transmitted data manipulation.| Yes. Since signalling consists of TPC commands |
+|FGT5010 | Fraudulent AMF registration for UE in UDM | An adversary-controlled AMF registers itself in the UDM as serving a victim UE in order to pave the way for other attacks such as fraud or UE subscription data retrieval.| No |
 |FGT5011 | Unauthorized access to Network Exposure Function (NEF) via token fraud | An adversary controlling an (external) Application Function (AF) presents a fraudulent OAuth access token to access Network Exposure Function (NEF) services.| Yes |
-|FGT5012 | Locate UE | An adversary may obtain the UE location using radio access or core network| Yes |
-|.001 | Passive radio signals observation | An adversary may non-cooperatively geolocate a UE from UE radio signals externals.| Yes |
-|.002 | Self Location Measurement | An adversary may elicit location reports from UE that is bid down to less secure format or passively observes location reports from UE employing null encryption.| Yes |
-|.003 | 5G-GUTI reuse | Adversary can track a device (get cell-level location) by listening for the same device ID being sent to the network.| Yes |
-|.004 | Core Network Function Signaling | An adversary in the core network exploits signaling protocols to obtain the location of the UE.| Yes |
-|.005 | Shared Network Function in slice | An adversary uses a legitimate access token for a shared Network Function (NF) to get location info of a user of a different slice.| Yes |
-|.006 | NAS Exploit | An adversary may geolocate a UE by modifying Non-Access Stratum (NAS) signaling.| Yes |
-|.007 | Silent of spoofed paging | Adversary sends spoofed or silent paging messages to a UE and deduces the UE's location from the responses of that UE| Yes |
-|.008 | Diameter signaling | An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide coarse location of the UE.| Yes |
+|FGT5012 | Locate UE | An adversary may obtain the UE location using radio access or core network| No |
+|.001 | Passive radio signals observation | An adversary may non-cooperatively geolocate a UE from UE radio signals externals.| No |
+|.002 | Self Location Measurement | An adversary may elicit location reports from UE that is bid down to less secure format or passively observes location reports from UE employing null encryption.| No |
+|.003 | 5G-GUTI reuse | Adversary can track a device (get cell-level location) by listening for the same device ID being sent to the network.| No |
+|.004 | Core Network Function Signaling | An adversary in the core network exploits signaling protocols to obtain the location of the UE.| No |
+|.005 | Shared Network Function in slice | An adversary uses a legitimate access token for a shared Network Function (NF) to get location info of a user of a different slice.| No |
+|.006 | NAS Exploit | An adversary may geolocate a UE by modifying Non-Access Stratum (NAS) signaling.| No |
+|.007 | Silent of spoofed paging | Adversary sends spoofed or silent paging messages to a UE and deduces the UE's location from the responses of that UE| No |
+|.008 | Diameter signaling | An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide coarse location of the UE.| No |
 |FGT5013 | Malicious VNF Instantiation | An adversary may use a fake or compromised container management controller to deploy fake VNFs to collect information from the network.| Yes |
 |FGT5014 | Shared resource discovery | An adversary running a malicious Virtual Network Function (VNF) may identify network resources co-resident on the same physical host.| Yes |
-|FGT5015 | Device Database Manipulation | An adversary may compromise the Equipment Identity Register (EIR) function and adds new equipment, modifies status (ok vs. stolen or prohibited) of mobile device.| Yes |
-|FGT5016 | Abuse of Inter-operator Interfaces | An adversary exploits interconnection/interworking between MNOs to obtain information about roaming user sessions or commit fraud.| Yes |
-|FGT5017 | Charging Data Record (CDR) collection | An adversary may query CDR databases in the mobile network to collect communications metadata.| Yes |
-|FGT5018 | Vandalism of Network Infrastructure | An adversary aims to destroy, expose, alter, disable, steal, or gain unauthorized access to physical assets such as infrastructure, hardware, or interconnection, affecting QoS or service availability.| Yes |
-|.001 | Cabling and junction boxes | An adversary targets unprotected cables and junction boxes in order to disrupt service.| Yes |
-|.002 | Radio Access Hardware | An adversary uses unrestricted access to exploit, damage, or destroy Radio Access hardware that lack adequate security| Yes |
+|FGT5015 | Device Database Manipulation | An adversary may compromise the Equipment Identity Register (EIR) function and adds new equipment, modifies status (ok vs. stolen or prohibited) of mobile device.| No |
+|FGT5016 | Abuse of Inter-operator Interfaces | An adversary exploits interconnection/interworking between MNOs to obtain information about roaming user sessions or commit fraud.| No |
+|FGT5017 | Charging Data Record (CDR) collection | An adversary may query CDR databases in the mobile network to collect communications metadata.| No |
+|FGT5018 | Vandalism of Network Infrastructure | An adversary aims to destroy, expose, alter, disable, steal, or gain unauthorized access to physical assets such as infrastructure, hardware, or interconnection, affecting QoS or service availability.| No |
+|.001 | Cabling and junction boxes | An adversary targets unprotected cables and junction boxes in order to disrupt service.| No |
+|.002 | Radio Access Hardware | An adversary uses unrestricted access to exploit, damage, or destroy Radio Access hardware that lack adequate security| No |
 |.003 | Edge servers | An adversary may seek physical access to isolated/remote edge servers using covert methods of entry with the intent to damage or destroy edge computing facilities, gaining unauthorized access at system level as an entry point to all hosted resources, theft of data on local storage, vandalism, and sabotage.| Yes |
-|.004 | Theft of Assets | An adversary accesses a shared site, or remote location, with intent to steal valuable materials (such as copper, batteries, and fuel) for resale.| Yes |
-|FGT5019 | Subscriber Profile Identifier Discovery | An adversary may discover the permanent subscriber identifier via various means| Yes |
-|.001 | Intercept Home Network via SUCI | An adversary may intercept unencrypted radio transmissions of a UE’s SUCI to identify the home network of the UE.| Yes |
-|.002 | Intercept bid-down SUPI | An adversary may intercept the UE permanent identifier (SUPI) from a UE that is bid down a less secure protocol.| Yes |
-|.003 | Obtain subscriber identifier via NF | An adversary in control of an Application Function (AF) or a rogue Network Function (NF) can make an API call to obtain the Subscriber Permanent Identifier (SUPI) or other sensitive UE information.| Yes |
-|.004 | Intercept unencrypted SUPI | An adversary may intercept unencrypted radio transmissions of a UE’s SUCI to identify the IMSI/SUPI of the UE.| Yes |
-|.005 | Diameter signaling | An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide IMSI/SUPI of the UE.| Yes |
-|.006 | Silent SMS | Adversary sends a spoofed or silent SMS to trigger paging of UE, to retrieve the subscriber profile identifier.| Yes |
-|FGT5020 | Retrieve UE subscription data | An adversary controlling a control plane network function may manipulate signaling to retrieve UE subscription information| Yes |
-|FGT5021 | Tunnel Endpoint ID (TEID) uniqueness failure | An adversary controlling a user-plane function (gNB or UPF) disrupts user traffic by assigning the new traffic a TEID already in use.| Yes |
+|.004 | Theft of Assets | An adversary accesses a shared site, or remote location, with intent to steal valuable materials (such as copper, batteries, and fuel) for resale.| No |
+|FGT5019 | Subscriber Profile Identifier Discovery | An adversary may discover the permanent subscriber identifier via various means| No |
+|.001 | Intercept Home Network via SUCI | An adversary may intercept unencrypted radio transmissions of a UE’s SUCI to identify the home network of the UE.| No |
+|.002 | Intercept bid-down SUPI | An adversary may intercept the UE permanent identifier (SUPI) from a UE that is bid down a less secure protocol.| No |
+|.003 | Obtain subscriber identifier via NF | An adversary in control of an Application Function (AF) or a rogue Network Function (NF) can make an API call to obtain the Subscriber Permanent Identifier (SUPI) or other sensitive UE information.| No |
+|.004 | Intercept unencrypted SUPI | An adversary may intercept unencrypted radio transmissions of a UE’s SUCI to identify the IMSI/SUPI of the UE.| No |
+|.005 | Diameter signaling | An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide IMSI/SUPI of the UE.| No |
+|.006 | Silent SMS | Adversary sends a spoofed or silent SMS to trigger paging of UE, to retrieve the subscriber profile identifier.| No |
+|FGT5020 | Retrieve UE subscription data | An adversary controlling a control plane network function may manipulate signaling to retrieve UE subscription information| No |
+|FGT5021 | Tunnel Endpoint ID (TEID) uniqueness failure | An adversary controlling a user-plane function (gNB or UPF) disrupts user traffic by assigning the new traffic a TEID already in use.| No |
 |FGT5022 | Alter Subscriber Profile | An adversary may alter the subscriber profile to achieve fraud, via SBI (Service Based Interfaces) or OA&M interfaces.| Yes |
-|FGT5023 | Charging fraud via NF control | An adversary controlling a control plane network function may manipulate signaling or parameters to achieve charging/billing fraud where victim is UE or operator itself| Yes |
+|FGT5023 | Charging fraud via NF control | An adversary controlling a control plane network function may manipulate signaling or parameters to achieve charging/billing fraud where victim is UE or operator itself| No |
 |FGT5024 | IAB Denial of Service | Adversary may jam to impact IAB or mIAB (gNB) node's communications to impact the UEs and downstream IAB nodeâ€™s ability to connect to network.| Yes |
 |FGT5025 | Falsify interconnect invoice | An adversary in a roaming partner operator may send altered service usage for a given UE to the home operator of that UE.| Yes |
 |FGT5026 | SIM cloning | Adversary may clone a SIM card (namely the IMSI, credential stored therein) and use it fraudulently to obtain telecom service at the expense of the user of the device with that legitimate SIM card| Yes |
 |FGT5027 | Spoof network slice identifier | An adversary controlling a Network Function (NF) or slice can gain access to a different network slice data by interacting with other NFs.| Yes |
 |FGT5028 | Discover network slice identifier | An adversary may guess the identifier of a different network slice, which allows for follow-on behaviors against that slice that require that identifier.| Yes |
 |FGT5029 | Exploit Semi-public Facing Application | Adversary send specifically crafted messages from an interconnect/interworking partner against roaming interface to gain access to the service function, e.g. SEPP, or cause a denial of service (DoS).| Yes |
-|FGT5031 | Discover TEID | An adversary may discover a valid GTP-U TEID in order to apply additional techniques.| Yes |
+|FGT5031 | Discover TEID | An adversary may discover a valid GTP-U TEID in order to apply additional techniques.| No |
 |FGT5032 | gNodeB Component Manipulation | An adversary may compromise a component of gNodeB to affect radio network configuration| Yes |
 |.001 | Radio Intelligent Controller (RIC) | An adversary may compromise a Radio Intelligent Controller (RIC) to affect radio network configuration.| Yes |
 |.002 | xApp | An adversary may compromise an xApp to affect the radio network configuration.| Yes |
