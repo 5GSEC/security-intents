@@ -17,17 +17,7 @@
 |.003 & | Local Accounts | Adversaries may obtain and abuse credentials of a local account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.| Yes |
 |.004 & | Cloud Accounts | Adversaries may obtain and abuse credentials of a cloud account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.| Yes |
 |FGT1190 & | Exploit Public-Facing Application | Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior.| Yes |
-|FGT1195 & | Supply Chain Compromise | Adversaries may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise. Supply chain compromise can take place at any stage of the supply chain including:
- - Manipulation of development tools
- - Manipulation of a development environment
- - Manipulation of source code repositories (public or private)
- - Manipulation of source code in open-source dependencies
- - Manipulation of software update/distribution mechanisms
- - Compromised/infected system images (multiple cases of removable media infected at the factory) (Citation: IBM Storwize) (Citation: Schneider Electric USB Malware)
- - Replacement of legitimate software with modified versions
- - Sales of modified/counterfeit products to legitimate distributors
- - Shipment interdiction
-While supply chain compromise can impact any component of hardware or software, attackers looking to gain execution have often focused on malicious additions to legitimate software in software distribution or update channels.| Yes |
+|FGT1195 & | Supply Chain Compromise | Adversaries may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise. Supply chain compromise can take place at any stage of the supply chain including:<ul><li>Manipulation of development tools</li> <li>Manipulation of a development environment</li> <li>Manipulation of source code repositories (public or private)</li> <li>Manipulation of source code in open-source dependencies</li> <li>Manipulation of software update/distribution mechanisms</li> <li>Compromised/infected system images (multiple cases of removable media infected at the factory) (Citation: IBM Storwize) (Citation: Schneider Electric USB Malware)</li> <li>Replacement of legitimate software with modified versions</li> <li>Sales of modified/counterfeit products to legitimate distributors</li> <li>Shipment interdiction</li></ul> While supply chain compromise can impact any component of hardware or software, attackers looking to gain execution have often focused on malicious additions to legitimate software in software distribution or update channels.| Yes |
 |.002 & | Compromise Software Supply Chain | Adversaries may manipulate application software prior to receipt by a final consumer for the purpose of data or system compromise.| Yes |
 |.003 & | Compromise Hardware Supply Chain | Adversaries may manipulate hardware components in products prior to receipt by a final consumer for the purpose of data or system compromise.| Yes |
 |.501 | SIM Credential Theft | An adversary may get access to several SIM credentials either by physical access to SIM card inventory or by injecting malware on SIM vendor server.| Yes |
