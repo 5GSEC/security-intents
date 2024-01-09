@@ -1,6 +1,6 @@
 
 | Mitre Id        | Threat           | Description  | Applicability to Power Optimziation |
-| ------------- |:-------------:| -----:|
+|:-----:|-------------|----------|------------|
 |FGT1014 & | Rootkit | Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components| Yes |
 
 |FGT1018 & | Remote System Discovery | Adversaries may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system.| Yes |
