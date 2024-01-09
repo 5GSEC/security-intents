@@ -79,19 +79,19 @@
 |.501 | Configurability of Fake Base Station or Access Point | An adversary may obtain software to configure a fake base station (gNB or gNB emulator) or WiFi access point in order to enable other Radio Access Network (RAN) follow-on behaviors against UEs such as adversary in the middle or denial of service.| Yes |
 |.502 | Configure Operator Core Network | An adversary may operationalize a customized mobile network in a target environment to enable other follow-on behaviors against UE.s| Yes |
 |FGT1609 | Container Administration Command | Adversaries may abuse a container administration service to execute commands within a container.| Yes |
-|.501 | Accessing Terminated VNF | An adversary may use an NFVI controller to gain access to data from a suspended or stopped VNF to extract sensitive information.| Yes |
+|.501 | Accessing Terminated VNF | An adversary may use an NFVI controller to gain access to data from a suspended or stopped VNF to extract sensitive information.| No. The ORAN environment is containerized |
 |FGT1611 | Escape to Host | Adversaries may break out of a container to gain access to the underlying host.| Yes |
-|.501 | Malicious privileged container VNF Shared Resource Access | An adversary may compromise a target Virtual Network Function (VNF) to gain unauthorized access to the data from the underlying resources shared with other VNFs.| Yes |
-|FGT5001 | Network-side SMS collection | An adversary may compromise the operator's SMS Center (SMSC) to collect SMS messages to/from the UEs.| Yes |
-|FGT5002	 |  home routing | A adversary positioned in an operator network may send an SMS delivery location query that will bypass the SMS home router of another operator, and which will allow to get the location of the user device.| Yes |
+|.501 | Malicious privileged container VNF Shared Resource Access | An adversary may compromise a target Virtual Network Function (VNF) to gain unauthorized access to the data from the underlying resources shared with other VNFs.| Yes. Resource sharing between containers is also there |
+|FGT5001 | Network-side SMS collection | An adversary may compromise the operator's SMS Center (SMSC) to collect SMS messages to/from the UEs.| No |
+|FGT5002	 |  home routing | A adversary positioned in an operator network may send an SMS delivery location query that will bypass the SMS home router of another operator, and which will allow to get the location of the user device.| No |
 |FGT5003 | Network Function Service Discovery | An adversary may query the Network Repository Function (NRF) to discover restricted Network Function (NF) services to further target that NF.| Yes |
 |FGT5004 | Network Flow Manipulation | An adversary may discover Software Defined Network (SDN) flow information, which could then open opportunity for lateral movement and unauthorized changes in the network.| Yes |
 |.001 | Controller | An adversary may use the compromised SDN controller or Control plane API to modify network flow rules, or traffic management policies.| Yes |
 |.002 | vSwitch | An adversary may compromise a vSwitch in an SDN network to manipulate the network traffic or cause denial of service| Yes |
 |FGT5005 | Memory Scraping | An adversary may be able to read memory registers to discover privileged information such as local password comparison, encryption key etc.| Yes |
 |FGT5006 | DNS Manipulation | An adversary can manipulate DNS requests to conceal or redirect network traffic and reveal end user activity.| Yes |
-|.001 | Layer 2 Redirection of Encrypted DNS | An adversary using a RAN fake gNB and fake UE device can manipulate encrypted traffic to achieve plaintext manipulation of DNS requests sent by the victim UE to the network over the radio interface.| Yes |
-|.002 | DNS Encapsulation | An adversary can hide user traffic within DNS requests that are part of the data sessions and transmit data undetected.| Yes |
+|.001 | Layer 2 Redirection of Encrypted DNS | An adversary using a RAN fake gNB and fake UE device can manipulate encrypted traffic to achieve plaintext manipulation of DNS requests sent by the victim UE to the network over the radio interface.| No |
+|.002 | DNS Encapsulation | An adversary can hide user traffic within DNS requests that are part of the data sessions and transmit data undetected.| No |
 |FGT5007 | Registration of malicious network functions | An adversary, such as an insider to the MNO or vendor, could install a malicious NF into the core network, in order to launch other attacks or get access to information.| Yes |
 |FGT5008 | Redirection of traffic via user plane network function | An adversary diverts user plane traffic for one or more UEs via a user plane function, to monitor user data.| Yes |
 |FGT5009 | Weaken Integrity | An adversary may compromise a network device’s integrity capability or configuration in order to exploit the non-integrity protected data communication| Yes |
