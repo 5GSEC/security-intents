@@ -1,7 +1,7 @@
 title: DNS Manipulation
 description: An adversary can manipulate DNS requests to redirect network traffic and potentially reveal end user activity.
 severity: high
-tags: [mitre, initial-access]
+tags: [5gcore, edge, mitre, accuknox, initial-access]
 detectionMethods: 
    - name: networkTraffic
      tag: [mitre, ds0029]

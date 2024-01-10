@@ -1,0 +1,12 @@
+title: preventLocalDNSHijack
+description: This attack consists of modifying the /etc/resolv.conf file
+to point to a malicious DNS server. The mitigation consists of having an security engine rule preventing writes to /etc/resolv.conf file
+severity: high
+tags: [5gcore, edge, accuknox]
+references:
+  - name: MITRE FiGHT
+    url: https://fight.mitre.org/techniques/FGT5006
+  - name: Hellfire
+    url: https://hellfire0x01.medium.com/get-familiar-with-dns-hijacking-2215a0a318d4
+  - name: SecurityTrails
+    url: https://securitytrails.com/blog/preventing-domain-hijacking-10-steps-to-increase-your-domain-security
