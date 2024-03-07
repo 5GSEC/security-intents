@@ -1,0 +1,15 @@
+title: Valid Accounts
+description: 
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+mitigationMethods: # Mechanisms to mitigate the threat
+securityActions:
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT1078
+    url: https://fight.mitre.org/techniques/FGT1078

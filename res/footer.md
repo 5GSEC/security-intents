@@ -8,13 +8,13 @@
    ```shell
    cp res/threatTemplate.yaml threats/execution/threat-name.yaml
     ```
-3. Create the Security Intent file(s) you listed in the `.securityIntents` field of the `threat-name.yaml` file, and
-   place them within the [intents](intents) directory. For e.g.,
+3. Create the Security Actions file(s) you listed in the `.securityActions` field of the `threat-name.yaml` file, and
+   place them within the [actions](actions) directory. For e.g.,
    ```yaml
    ...
-   securityIntents:
-    - sample-si.yaml 
-    - sample-si-2.yaml 
+   securityActions:
+    - sample-sa-1.yaml 
+    - sample-sa-2.yaml 
    ...
    ```
 4. Run `make`

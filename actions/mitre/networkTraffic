@@ -1,0 +1,9 @@
+title: networkTraffic
+description: Malware uses DNS as a transport to communicate with the command-and-control servers [infloBlox]. Hence the packets contents need to be checked for data exfiltration. Basic checks can be implemented by the security engines on the DNS packets
+severity: high
+tags: [5gcore, edge, mitre]
+references:
+  - name: mitre
+    url: https://fight.mitre.org/data%20sources/DS0029
+  - name: infoBlox 
+    url: https://www.infoblox.com/dns-security-resource-center/dns-security-faq/what-is-dns-protection/

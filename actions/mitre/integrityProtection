@@ -1,0 +1,16 @@
+title: integrityProtection
+description: There are multiple contexts here:
+DNS Manipulation: In this context, integrity protection refers to ensuring
+that the DNS responses integrity. Currently, there is no way to for security
+ engines to do this on the cluster. There are techniques to use DNSSEC 
+[ibm, microsoft] to secure DNS data validating the digital signatures. 
+of the 
+severity: high
+tags: [5gcore, edge, mitre]
+references:
+  - name: mitre
+    url: https://fight.mitre.org/mitigations/FGM1557
+  - name: ibm
+    url: https://www.ibm.com/docs/en/i/7.3?topic=support-domain-name-system-security-extensions-dnssec
+  - name: microsoft
+    url: https://learn.microsoft.com/en-us/windows-server/networking/dns/validate-dnssec-responses

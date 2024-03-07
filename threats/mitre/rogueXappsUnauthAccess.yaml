@@ -1,0 +1,25 @@
+title: Rogue xApps unauthorized access
+description: Malicious xApps may gain unauthorized access to near-RT RIC and E2 nodes
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+mitigationMethods: # Mechanisms to mitigate the threat
+   - name: networkSegmentation
+     tag: [mitre, m1030]
+     description: restrict paths to some components/ports
+     url: https://fight.mitre.org/mitigations/M1030
+   - name: credentialAccessProtection
+     tag: [mitre, m1043]
+     description: Use capabilities to prevent successful credential access by adversaries
+     url: https://fight.mitre.org/mitigations/M1043
+securityActions:
+  - mitre/networkSegmentation
+  - mitre/credentialAccessProtection
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT5034
+    url: https://fight.mitre.org/techniques/FGT5034

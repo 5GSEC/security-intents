@@ -1,0 +1,25 @@
+title: Protocol Tunneling
+description: Adversaries may tunnel network communications to and from a victim system within a separate protocol to avoid detection/network filtering and/or enable access to otherwise unreachable systems.
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+   - name: networkTraffic
+     tag: [mitre, ds0029]
+     description: desc
+     url: https://fight.mitre.org/data%20sources/DS0029
+mitigationMethods: # Mechanisms to mitigate the threat
+   - name: encryptSensitiveInformation
+     tag: [mitre, m1041]
+     description: Use IPSec tunnel between gNB and UPF to prevent adversary on the side attacks
+     url: https://fight.mitre.org/mitigations/M1041
+securityActions:
+  - mitre/networkTraffic
+  - mitre/encryptSensitiveInformation
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT1572.501
+    url: https://fight.mitre.org/techniques/FGT1572.501

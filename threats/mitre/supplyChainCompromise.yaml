@@ -1,0 +1,15 @@
+title: SupplyChainCompromise
+description: Adversaries may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise.
+severity: High
+tags:
+  - oran
+  - 5gcore
+  - generic
+detectionMethods: # Mechanisms to detect the threat
+mitigationMethods: # Mechanisms to mitigate the threat
+securityActions:
+securityIntentBinding: # Set of labels, annotations describing workloads who would be impacted by this threat
+preDeploymentConsiderations: [ ] # Anything that can be done in CI/CD pipelines that can alleviate this threat
+references:
+  - name: FGT1195
+    url: https://fight.mitre.org/techniques/FGT51195
